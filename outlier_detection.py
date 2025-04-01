@@ -66,10 +66,12 @@ def pca_data(data, n_components=15):
     data_pca = pca.fit_transform(data)
     return data_pca
 
+
 def tsne_data(data, n_components=3):
     tsne = TSNE(n_components=n_components, random_state=42)
     data_3d = tsne.fit_transform(data)
     return data_3d
+
 
 # -----------------------------------------------------------------------------------------------
 # Dummy data (Kaggle Cancer)
@@ -89,16 +91,19 @@ data.dropna(axis=1, inplace=True)
 print(labels.shape)
 print(data.shape)
 
+
 # -----------------------------------------------------------------------------------------------
 # Dimensionality reduction: Calculate PCA and TSNE Components
 # -----------------------------------------------------------------------------------------------
 data_pca = pca_data(data)
 data_tsne = tsne_data(data_pca)
 
+
 # -----------------------------------------------------------------------------------------------
 # Calculate Mahalanobis Distance
 # -----------------------------------------------------------------------------------------------
 mahalanobis_dist, outliers = calculate_mahal(data_pca, labels)
+
 
 # -----------------------------------------------------------------------------------------------
 # Plot 3-D
