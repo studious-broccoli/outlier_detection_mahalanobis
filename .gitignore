@@ -1,2 +1,6 @@
 .DS_Store
 .idea/
+.python-version
+
+# Claude Code local settings
+.claude/settings.local.json
